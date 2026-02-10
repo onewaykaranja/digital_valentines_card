@@ -32,6 +32,10 @@ body {
   position: relative;
 }
 
+body.minimalist {
+  background: var(--bg);
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -42,6 +46,10 @@ body::before {
       rgba(255, 247, 249, 0.55)
     );
   z-index: -1;
+}
+
+body.minimalist::before {
+  background: none;
 }
 
 body.dark::before {
@@ -56,20 +64,51 @@ body.dark::before {
   position: relative;
   z-index: 6;
   border: none;
-  background: var(--accent);
-  color: #fff;
+  background: transparent;
+  color: var(--ink);
   font-weight: 600;
-  padding: 0.55rem 0.95rem;
+  padding: 0.4rem 0.75rem;
   border-radius: 999px;
-  box-shadow: 0 10px 20px rgba(214, 58, 107, 0.22);
+  font-size: 0.85rem;
+  box-shadow: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.minimal-toggle {
+  position: relative;
+  z-index: 6;
+  border: 1px solid rgba(214, 58, 107, 0.35);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  font-weight: 600;
+  padding: 0.38rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 8px 16px rgba(214, 58, 107, 0.1);
+}
+
+body.dark .minimal-toggle {
+  background: rgba(26, 17, 23, 0.7);
+  border-color: rgba(255, 122, 162, 0.35);
+  box-shadow: 0 10px 20px rgba(255, 122, 162, 0.14);
+}
+
+.minimal-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.minimal-toggle[aria-pressed="true"] {
+  background: var(--accent);
+  color: #fff;
+  border-color: transparent;
 }
 
 .audio-toggle:hover {
   transform: translateY(-2px);
-  background: var(--accent-dark);
-  box-shadow: 0 18px 32px rgba(214, 58, 107, 0.3);
+  color: var(--accent-dark);
 }
 
 
@@ -122,7 +161,7 @@ body.dark .home-button img {
   align-items: center;
   gap: 0.4rem;
   background: rgba(255, 255, 255, 0.7);
-  padding: 0.3rem 0.4rem;
+  padding: 0.2rem 0.3rem;
   border-radius: 999px;
   box-shadow: 0 10px 20px rgba(214, 58, 107, 0.12);
 }
@@ -137,8 +176,8 @@ body.dark .theme-toggle {
   background: transparent;
   color: var(--ink);
   font-weight: 600;
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
   padding: 0;
   border-radius: 999px;
   cursor: pointer;
@@ -146,7 +185,7 @@ body.dark .theme-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .theme-btn.is-active {

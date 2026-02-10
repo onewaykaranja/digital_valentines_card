@@ -50,7 +50,14 @@ const initAudio = () => {
 
   const updateButton = (isPlaying) => {
     if (!audioToggle) return;
-    audioToggle.textContent = isPlaying ? 'Pause music' : 'Play music';
+    const icon = audioToggle.querySelector('.audio-icon');
+    if (icon) {
+      icon.textContent = isPlaying ? '🔊' : '🔇';
+    }
+    audioToggle.setAttribute(
+      'aria-label',
+      isPlaying ? 'Pause music' : 'Play music'
+    );
     audioToggle.setAttribute('aria-pressed', String(isPlaying));
   };
 
@@ -71,7 +78,11 @@ const initAudio = () => {
     bgAudio.addEventListener('play', () => updateButton(true));
     bgAudio.addEventListener('pause', () => updateButton(false));
     bgAudio.addEventListener('error', () => {
-      audioToggle.textContent = 'Audio unavailable';
+      const icon = audioToggle.querySelector('.audio-icon');
+      if (icon) {
+        icon.textContent = '⚠️';
+      }
+      audioToggle.setAttribute('aria-label', 'Audio unavailable');
       audioToggle.setAttribute('aria-pressed', 'false');
     });
   }
@@ -88,6 +99,26 @@ const initAudio = () => {
   unlockEvents.forEach((eventName) =>
     window.addEventListener(eventName, unlockAudio)
   );
+};
+
+const initMinimalistToggle = () => {
+  const minimalToggle = document.querySelector('.minimal-toggle');
+  if (!minimalToggle) return;
+
+  const applyMinimalist = (isMinimal) => {
+    document.body.classList.toggle('minimalist', isMinimal);
+    minimalToggle.setAttribute('aria-pressed', String(isMinimal));
+    minimalToggle.textContent = isMinimal ? 'Full background' : 'Minimalist';
+    localStorage.setItem('minimalist', String(isMinimal));
+  };
+
+  const saved = localStorage.getItem('minimalist') === 'true';
+  applyMinimalist(saved);
+
+  minimalToggle.addEventListener('click', () => {
+    const isMinimal = !document.body.classList.contains('minimalist');
+    applyMinimalist(isMinimal);
+  });
 };
 
 const initValentineHover = () => {
@@ -139,3 +170,4 @@ initScrollReveal();
 initThemeToggle();
 initAudio();
 initValentineHover();
+initMinimalistToggle();
