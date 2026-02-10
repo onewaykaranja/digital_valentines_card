@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine’s Scroll Story</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="home-button" href="#top" aria-label="Homepage">
+        <img src="rose.png" alt="Rose homepage" />
+      </a>
+      <div class="nav-actions">
+        <button class="audio-toggle" type="button" aria-pressed="false">
+          Play music
+        </button>
+        <div class="theme-toggle" role="group" aria-label="Theme">
+          <button class="theme-btn" type="button" data-theme="light">
+            💗
+          </button>
+          <button class="theme-btn" type="button" data-theme="dark">
+            🖤
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">February 14</p>
+          <h1>Table For Two</h1>
+          <p class="sub">
+            I'll rate u 8/10, since I am in 2 you.
+          </p>
+        </div>
+      </section>
+
+      <section id="story" class="scroll-section">
+        <h2>Dedix</h2>
+        <p>
+          Naona vile wanickeki<br />
+          Siwezi mind lakini unasleki<br />
+          Nacheki vile umemedi<br />
+          Hisia nazopata ukishika dready
+        </p>
+        <p>
+          Hebu niambie<br />
+          Namba nilishakupea unipigia<br />
+          Mara ngapi nitasema usikie<br />
+          Ukitaka niulize nirudie
+        </p>
+        <p>
+          Ehh<br />
+          Juu mimi ninangoja tu<br />
+          Lately you've been switching up my point of view<br />
+          I wasn't even planning to be on this route<br />
+          Now you got me thinking about my future too
+        </p>
+        <p>
+          Ahh<br />
+          But maybe we can waste some time<br />
+          I don't even have to really make you mine<br />
+          Unavyonipendeza without a try<br />
+          Loving how you always make me touch the sky
+        </p>
+        <p>
+          Aki sioni<br />
+          (Sioni)<br />
+          Nikisonga mbele bila wewe<br />
+          When you get lonely<br />
+          (Lonely)<br />
+          Nitakufikia
+        </p>
+        <p>
+          Juu mi sioni<br />
+          (No no no no)<br />
+          Nikisonga mbele bila wewe<br />
+          And when you're falling<br />
+          (Down)<br />
+          Nitakufikia<br />
+          Nitakufikia
+        </p>
+        <p>
+          I know it's been a long time<br />
+          You're saying<br />
+          You've been praying for a long time<br />
+          You're hoping<br />
+          He'll be staying for a long time
+        </p>
+        <p>
+          And every now and then you say it's been a long time coming now<br />
+          Heaven is on call I'm falling down<br />
+          You put me on hold and I don't know how<br />
+          All I know for sure is I need you now<br />
+          Somehow
+        </p>
+        <p>
+          Juu mimi ninangoja tu<br />
+          Lately you've been switching up my point of view<br />
+          I wasn't even planning to be on this route<br />
+          Now you got me thinking about my future too
+        </p>
+        <p>
+          Ahh<br />
+          But maybe we can waste some time<br />
+          I don't even have to really make you mine<br />
+          Unavyonipendeza without a try<br />
+          I'm loving how you always make me touch the sky
+        </p>
+        <p class="credit">Njerae - Aki Sioni</p>
+      </section>
+
+      <section id="moments" class="scroll-section">
+        <h2>Hear me out</h2>
+        <p>
+          Sijui nikuite simiti, juu vile wewe unijenga 😂.
+          <br />
+          <br />
+          From the first day, ulinibamba different. Na sasa nataka tu-celebrate
+          this love properly.
+          <span class="valentine-cta">Be my Valentine, boo?</span>
+          <span class="valentine-heart" aria-hidden="true">💕</span>
+        </p>
+      </section>
+
+      <section id="notes" class="scroll-section">
+        <h2>In the frame of my mind</h2>
+        <p>
+          Sina maneno mingi, but my heart speaks volumes when I'm with you
+        </p>
+      </section>
+    </main>
+
+    <audio id="bg-audio" autoplay loop preload="auto">
+      <source
+        src="audio/Njerae%20-%20Aki%20Sioni%20(Official%20Audio).mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-Cf1iE1knZajBrrR8a+RbXvX8yV78i8rX8YHccCM1sV5f0L1bNn8wCldxAq9t5QnZ2X2d7Qm+0Yw6T7JtNqV3kA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
